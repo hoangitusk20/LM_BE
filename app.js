@@ -13,12 +13,14 @@ const ReaderRoute = require('./routes/Reader');
 const EmployeeRoute = require('./routes/Employee');
 const BookLoanRoute = require('./routes/BookLoan');
 const LostBookRoute = require('./routes/LostBook');
+const LiquidatedBookRoute = require('./routes/LiquidatedBook');
 // ==============
 app.use('/Book', BookRoute);
 app.use('/Reader', ReaderRoute);
 app.use('/Employee', EmployeeRoute);
 app.use('/BookLoan', BookLoanRoute);
 app.use('/LostBook', LostBookRoute);
+app.use('/LiquidatedBook', LiquidatedBookRoute);
 
 
 // Connect to DB
