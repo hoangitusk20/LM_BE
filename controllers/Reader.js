@@ -40,4 +40,14 @@ const update = async(req, res) =>{
         res.json({message:error});
     }
 }
-module.exports = {create, getReaderById, update}
+
+const deleteReader = async(req, res) =>{
+    try {
+        const savedReader =  await Reader.findOneAndDelete({_id: req.params._id});
+        res.status(200).json(savedReader);
+    } catch (error) {
+        res.json({message:error});
+    }
+}
+
+module.exports = {create, getReaderById, update, deleteReader}

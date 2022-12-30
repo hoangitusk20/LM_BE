@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { create, getReaderById, update } = require('../controllers/Reader');
+const { create, getReaderById, update, deleteReader } = require('../controllers/Reader');
 
 const Reader = require('../model/Reader');
 
@@ -11,6 +11,7 @@ router.post('/', create);
 router.get('/:_id/', getReaderById);
 //Update reader
 router.put('/', update);
-
+//Delete reader
+router.delete('/:_id/', deleteReader)
 
 module.exports = router;
