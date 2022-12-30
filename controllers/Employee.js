@@ -49,4 +49,16 @@ const deleteEmployee = async(req, res) =>{
     }
 }
 
-module.exports = {create, getEmployeeByName, update, deleteEmployee}
+const findEmployeeByDepartment = async(req, res) =>{
+    try {
+        let department = req.params.department;
+        console.log(req.query);
+        const employee = await Employee.find({ department: department });
+        res.status(200).json(employee);
+    } catch (error) {
+        console.log("error");
+        res.json({message:error});
+    }
+}
+
+module.exports = {create, getEmployeeByName, update, deleteEmployee, findEmployeeByDepartment}

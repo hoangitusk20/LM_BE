@@ -1,5 +1,5 @@
 const express = require('express');
-const { create, getEmployeeByName, update, deleteEmployee } = require('../controllers/Employee');
+const { create, getEmployeeByName, update, deleteEmployee, findEmployeeByDepartment } = require('../controllers/Employee');
 const router = express.Router();
 const Employee = require('../model/Employee');
 
@@ -8,6 +8,7 @@ const Employee = require('../model/Employee');
 router.post('/', create);
 //Get Employee
 router.get('/', getEmployeeByName);
+router.get('/department/:department/', findEmployeeByDepartment);
 // Update Employee information
 router.put('/:_id/', update);
 //Delete Employee 
