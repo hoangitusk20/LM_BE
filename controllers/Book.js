@@ -61,5 +61,32 @@ const returnBook = async(req, res) =>{
     }
 }
 
+const update = async(req, res)=>{
+    try {
+        const updates = {
+            name : req.body.name,
+            genres: req.body.genres,
+            author: req.body.author,
+            year: req.body.year,
+            publisher: req.body.publisher,
+            inputDate: req.body.inputDate,
+            price: req.body.price,
+            state: req.body.state
+        }
+        const savedBook =  await Book.findOneAndUpdate({_id: req.params._id}, updates);
+        res.status(200).json(savedBook);
+    } catch (error) {
+        res.json({message:error});
+    }
+}
 
-module.exports = {findByName, create, findById, loan, returnBook}
+const deleteBook = async(req, res) =>{
+    try {
+        const savedBook =  await Book.findOneAndDelete({_id: req.params._id});
+        res.status(200).json(savedBook);
+    } catch (error) {
+        res.json({message:error});
+    }
+}
+
+module.exports = {findByName, create, findById, loan, returnBook, update, deleteBook}
