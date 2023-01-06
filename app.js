@@ -25,6 +25,8 @@ app.use('/LiquidatedBook', LiquidatedBookRoute);
 
 // Connect to DB
 mongoose.set('strictQuery', false);
+app.use(cors())
+
 mongoose.connect(process.env.DATABASE, {useNewUrlParser: true}, ()=> {
     console.log('Connected to database');
 })
