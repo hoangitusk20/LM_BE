@@ -15,6 +15,8 @@ const EmployeeRoute = require('./routes/Employee');
 const BookLoanRoute = require('./routes/BookLoan');
 const LostBookRoute = require('./routes/LostBook');
 const LiquidatedBookRoute = require('./routes/LiquidatedBook');
+app.use(cors())
+
 // ==============
 app.use('/Book', BookRoute);
 app.use('/Reader', ReaderRoute);
@@ -23,14 +25,9 @@ app.use('/BookLoan', BookLoanRoute);
 app.use('/LostBook', LostBookRoute);
 app.use('/LiquidatedBook', LiquidatedBookRoute);
 
- app.all('/', function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    next()
-  });
+
 // Connect to DB
 mongoose.set('strictQuery', false);
-app.use(cors())
 
 mongoose.connect(process.env.DATABASE, {useNewUrlParser: true}, ()=> {
     console.log('Connected to database');
