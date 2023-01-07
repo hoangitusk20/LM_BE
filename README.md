@@ -1,7 +1,7 @@
 # LM_BE
 
-#Đồ án nhập môn công nghệ phần mềm
-##Đề tài: Quản lý thư viện
+# Đồ án nhập môn công nghệ phần mềm
+## Đề tài: Quản lý thư viện
 
 ## THÔNG TIN THÀNH VIÊN
 |**STT**|**MSSV**|**Họ và tên**|**Email**|
