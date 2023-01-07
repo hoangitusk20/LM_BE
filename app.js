@@ -37,3 +37,5 @@ mongoose.connect(process.env.DATABASE, {useNewUrlParser: true}, ()=> {
 const PORT = 9999;
 
 app.listen(PORT);
+
+console.log(`Listen on port ${PORT}.`)

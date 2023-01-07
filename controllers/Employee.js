@@ -12,9 +12,7 @@ const create =async (req,res) =>{
 
 const getEmployeeByName = async(req, res)=>{
     try {
-        let name = req.query.name;
-        console.log(name);
-        const employee = await Employee.find({ name: name });
+        const employee = await Employee.find({ name: req.params._name });
         res.status(200).json(employee);
     } catch (error) {
         console.log("error");
@@ -51,9 +49,7 @@ const deleteEmployee = async(req, res) =>{
 
 const findEmployeeByDepartment = async(req, res) =>{
     try {
-        let department = req.params.department;
-        console.log(req.query);
-        const employee = await Employee.find({ department: department });
+        const employee = await Employee.find({ department: req.params._department });
         res.status(200).json(employee);
     } catch (error) {
         console.log("error");

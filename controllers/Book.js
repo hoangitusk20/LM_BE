@@ -13,20 +13,8 @@ const create =async (req,res) =>{
 
 const findByName = async(req, res) =>{
     try {
-        let name = req.query.name;
-        console.log(req.query);
-        let exactly = Boolean(req.query.exactly);
-        let bookList; 
-        if (exactly == true){
-            bookList = await Book.find({ name: name });
-            console.log(bookList);
-        }
-        else{
-            let regex = new RegExp(`${name}`);
-            bookList = await Book.find({ name: regex });
-        }
-
-        res.status(200).json(bookList);
+        const book = await Book.find({ name: req.params._name});
+        res.status(200).json(book);
     } catch (error) {
         console.log("error");
         res.json({message:error});
@@ -37,6 +25,15 @@ const findByName = async(req, res) =>{
 const findById = async(req, res) =>{
     try {
         const book = await Book.find({ _id: req.params._id});
+        res.status(200).json(book);
+    } catch (error) {
+        res.json({message:error});
+    }
+}
+
+const findAll = async(req, res) =>{
+    try {
+        const book = await Book.findAll(req, res);
         res.status(200).json(book);
     } catch (error) {
         res.json({message:error});
@@ -89,4 +86,4 @@ const deleteBook = async(req, res) =>{
     }
 }
 
-module.exports = {findByName, create, findById, loan, returnBook, update, deleteBook}
+module.exports = {findByName, findAll, create, findById, loan, returnBook, update, deleteBook}

@@ -7,8 +7,8 @@ const Employee = require('../model/Employee');
 // Create employee
 router.post('/', create);
 //Get Employee
-router.get('/', getEmployeeByName);
-router.get('/department/:department/', findEmployeeByDepartment);
+router.get('/name/:_name/', getEmployeeByName);
+router.get('/department/:_department/', findEmployeeByDepartment);
 // Update Employee information
 router.put('/:_id/', update);
 //Delete Employee 

@@ -1,5 +1,5 @@
 const express = require('express');
-const { create, findById, findByName, loan, returnBook, update, deleteBook } = require('../controllers/Book');
+const { create, findById, findByName, loan, returnBook, update, deleteBook, findAll } = require('../controllers/Book');
 const router = express.Router();
 const Book = require('../model/Book');
 
@@ -8,7 +8,8 @@ const Book = require('../model/Book');
 router.post('/', create);
 //Get book
 router.get('/:_id/', findById);
-router.get('/', findByName);
+router.get('/', findAll);
+router.get('/name/:_name', findByName);
 // Update book state 
 router.put('/loan/:_id/', loan);
 router.put('/return/:_id/', returnBook) 
