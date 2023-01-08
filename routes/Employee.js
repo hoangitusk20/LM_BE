@@ -9,7 +9,6 @@ router.post('/', create);
 //Get Employee
 router.get('/all/', findAll);
 router.get('/', getEmployeeByName);
-router.get('/', findAll)
 router.get('/department/:department/', findEmployeeByDepartment);
 // Update Employee information
 router.put('/:_id/', update);

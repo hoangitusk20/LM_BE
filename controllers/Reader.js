@@ -21,6 +21,19 @@ const getReaderById = async(req, res) =>{
     }
 }
 
+const getReaderByName = async(req, res)=>{
+    try {
+        let name = req.query.name;
+        console.log(name);
+        const reader = await Reader.find({ name: name });
+        res.status(200).json(reader);
+    } catch (error) {
+        console.log("error");
+        res.json({message:error});
+    }
+}
+
+
 const update = async(req, res) =>{
     try {
         const updates = {
@@ -59,4 +72,4 @@ const findAll = async(req, res) =>{
     }
 }
 
-module.exports = {create, getReaderById, update, deleteReader,findAll}
+module.exports = {create, getReaderById, update, deleteReader,findAll, getReaderByName}
