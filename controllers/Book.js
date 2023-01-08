@@ -89,4 +89,13 @@ const deleteBook = async(req, res) =>{
     }
 }
 
-module.exports = {findByName, create, findById, loan, returnBook, update, deleteBook}
+
+const findAll = async(req, res) =>{
+    try {
+        const savedBook =  await Book.find();
+        res.status(200).json(savedBook);
+    } catch (error) {
+        res.json({message:error});
+    }
+}
+module.exports = {findByName, create, findById, loan, returnBook, update, deleteBook, findAll}

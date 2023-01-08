@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { create, getReaderById, update, deleteReader } = require('../controllers/Reader');
+const { create, getReaderById, update, deleteReader, findAll} = require('../controllers/Reader');
 
 const Reader = require('../model/Reader');
 
@@ -8,6 +8,7 @@ const Reader = require('../model/Reader');
 //Create reader
 router.post('/', create);
 //Get reader
+router.get('/all/', findAll);
 router.get('/:_id/', getReaderById);
 //Update reader
 router.put('/', update);

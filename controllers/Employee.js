@@ -61,4 +61,13 @@ const findEmployeeByDepartment = async(req, res) =>{
     }
 }
 
-module.exports = {create, getEmployeeByName, update, deleteEmployee, findEmployeeByDepartment}
+const findAll = async(req, res) =>{
+    try {
+        const savedEmployee =  await Employee.find();
+        res.status(200).json(savedEmployee);
+    } catch (error) {
+        res.json({message:error});
+    }
+}
+
+module.exports = {create, getEmployeeByName, update, deleteEmployee, findEmployeeByDepartment, findAll}

@@ -50,4 +50,13 @@ const deleteReader = async(req, res) =>{
     }
 }
 
-module.exports = {create, getReaderById, update, deleteReader}
+const findAll = async(req, res) =>{
+    try {
+        const savedReader =  await Reader.find();
+        res.status(200).json(savedReader);
+    } catch (error) {
+        res.json({message:error});
+    }
+}
+
+module.exports = {create, getReaderById, update, deleteReader,findAll}
