@@ -25,7 +25,7 @@ Link cũ: https://github.com/YumeAyasaki/LM_BE
 - Ghi nhận mất sách
 - Lập phiếu thu tiền phạt
 
-#Future work
+# Future work
 - Authentication
 - Phân quyền
 - Chỉnh sửa quy định
