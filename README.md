@@ -14,3 +14,18 @@
 Do có một số trục trặc, nên đây là github mới, là phần tiếp theo kể tử commit cuối cùng của link cũ.
 
 Link cũ: https://github.com/YumeAyasaki/LM_BE
+
+# Current status
+- API CRUD sách
+- API CRUD nhân viên
+- API CRUD độc giả
+- Mượn sách
+- Trả sách
+- Thanh lý sách
+- Ghi nhận mất sách
+- Lập phiếu thu tiền phạt
+
+#Future work
+- Authentication
+- Phân quyền
+- Chỉnh sửa quy định
